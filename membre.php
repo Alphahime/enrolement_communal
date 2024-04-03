@@ -22,10 +22,10 @@ class Membre implements Crud {
             $stmt->bindParam(":sexe", $sexe, PDO::PARAM_STR);
             $stmt->bindParam(":situation_matrimoniale", $situation_matrimoniale, PDO::PARAM_STR);
             $stmt->bindParam(":statut", $statut, PDO::PARAM_STR);
-            $stmt->bindParam(":adresse", $adresse, PDO::PARAM_STR);
+            $stmt->bindParam(":adresse",$adresse, PDO::PARAM_STR);
             $stmt->execute();
 
-            // Redirection vers index.php après l'ajout
+            
             header("location: index.php");
             exit();
 
