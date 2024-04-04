@@ -21,14 +21,13 @@ if (isset($_GET['id'])) {
         // Récupération des données du formulaire
         $nom = $_POST["nom"];
         $prenom = $_POST["prenom"];
-        $tranche_age = $_POST["tranche_age"];
         $sexe = $_POST["sexe"];
         $situation_matrimoniale = $_POST["situation_matrimoniale"];
-        $statut = $_POST["statut"];
         $adresse = $_POST["adresse"];
+        $matricule = $_POST["matricule"]; // Ajout du champ "Matricule"
 
         // Mise à jour des informations du membre
-        $membre->updateMember($id, $nom, $prenom, $tranche_age, $sexe, $situation_matrimoniale, $statut, $adresse);
+        $membre->updateMember($id, $nom, $prenom, $tranche_age, $sexe, $situation_matrimoniale, $statut, $adresse, $matricule);
     }
 } else {
     // Redirection vers index.php si l'ID du membre n'est pas spécifié
@@ -84,6 +83,10 @@ if (isset($_GET['id'])) {
         <div class="form-group">
             <label for="adresse">Adresse :</label>
             <input type="text" class="form-control" id="adresse" name="adresse" value="<?php echo $membreInfo['adresse']; ?>" required>
+        </div>
+        <div class="form-group">
+            <label for="matricule">Matricule :</label>
+            <input type="text" class="form-control" id="matricule" name="matricule" value="<?php echo $membreInfo['matricule']; ?>" required>
         </div>
         <button type="submit" class="btn btn-primary" name="submit">Enregistrer les modifications</button>
     </form>
